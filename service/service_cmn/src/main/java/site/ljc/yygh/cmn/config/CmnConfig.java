@@ -1,4 +1,4 @@
-package site.ljc.yygh.hosp.config;
+package site.ljc.yygh.cmn.config;
 
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
  * @Version 1.0
  */
 @Configuration
-@MapperScan("site.ljc.yygh.hosp.mapper")
-public class HospConfig {
+@MapperScan("site.ljc.yygh.cmn.mapper")
+public class CmnConfig {
     @Bean
     public PaginationInnerInterceptor paginationInnerInterceptor(){
         return new PaginationInnerInterceptor();

@@ -1,4 +1,4 @@
-package site.ljc.yygh.common.config.utils;
+package site.ljc.yygh.common.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -7,10 +7,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import site.ljc.yygh.common.config.utils.MD5;
+import site.ljc.yygh.common.utils.MD5;
 import site.ljc.yygh.common.result.Result;
 import site.ljc.yygh.hosp.service.HosptialSetService;
-import site.ljc.yygh.hosp.service.impl.HospitalSetServiceImpl;
 import site.ljc.yygh.model.hosp.HospitalSet;
 import site.ljc.yygh.vo.hosp.HospitalQueryVo;
 
