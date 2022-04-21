@@ -18,7 +18,7 @@
         <module>service</module>
 <!--        <module>server-gateway</module>-->
 <!--        <module>service-client</module>-->
-<!--        <module>hospital-manage</module>-->
+        <module>hospital-manage</module>
     </modules>
 
     <properties>
@@ -130,6 +130,8 @@
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
