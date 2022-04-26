@@ -1,5 +1,12 @@
 package site.ljc.yygh.hosp.service;
 
+
+import org.springframework.data.domain.Page;
+import site.ljc.yygh.model.hosp.Department;
+import site.ljc.yygh.vo.hosp.DepartmentQueryVo;
+import site.ljc.yygh.vo.hosp.DepartmentVo;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -9,4 +16,10 @@ import java.util.Map;
  */
 public interface DepartmentService {
     void save(Map<String, Object> paramMap);
+
+    Page<Department> findPageDepartment(int page, int limit, DepartmentQueryVo departmentQueryVo);
+
+    void remove(String hoscdoe, String depcode);
+
+    List<DepartmentVo> findDeptTree(String hoscode);
 }

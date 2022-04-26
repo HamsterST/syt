@@ -1,6 +1,8 @@
 package site.ljc.yygh.hosp.service;
 
+import org.springframework.data.domain.Page;
 import site.ljc.yygh.model.hosp.Hospital;
+import site.ljc.yygh.vo.hosp.HospitalQueryVo;
 
 import java.util.Map;
 
@@ -14,4 +16,11 @@ public interface HospitalService {
     void save(Map<String, Object> paramMap);
 
     Hospital getByHoscode(String hoscode);
+
+    Page selectHospPage(Integer page, Integer limit, HospitalQueryVo hospitalQueryVo);
+
+    void updateStatus(String id, Integer status);
+
+    Map<String,Object> getHospById(String id);
+
 }
