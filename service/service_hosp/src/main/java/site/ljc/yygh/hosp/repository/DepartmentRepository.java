@@ -9,5 +9,6 @@ import site.ljc.yygh.model.hosp.Department;
  * @Version 1.0
  */
 public interface DepartmentRepository extends MongoRepository<Department,String> {
+
     Department getDepartmentByHoscodeAndDepcode(String hoscode, String depcode);
 }

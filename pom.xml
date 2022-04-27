@@ -16,10 +16,11 @@
         <module>common</module>
         <module>model</module>
         <module>service</module>
-<!--        <module>server-gateway</module>-->
+        <module>service_gateway</module>
         <module>hospital-manage</module>
         <module>service_client</module>
-        <module>service_cmn_client</module>
+        <module>Service_gateway</module>
+
     </modules>
 
     <properties>

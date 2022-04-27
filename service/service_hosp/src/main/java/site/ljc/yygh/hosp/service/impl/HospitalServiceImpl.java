@@ -13,6 +13,7 @@ import site.ljc.yygh.vo.hosp.HospitalQueryVo;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -98,6 +99,30 @@ public class HospitalServiceImpl implements HospitalService {
         //单独处理更直观
         result.put("bookingRule",hospital.getBookingRule());
         //不需要重复返回
+        hospital.setBookingRule(null);
+        return result;
+    }
+
+    @Override
+    public String getHospName(String hoscode) {
+        Hospital hospital = hospitalRepository.getHospitalByHoscode(hoscode);
+        if(hospital!=null){
+            return hospital.getHosname();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Hospital> findByHosname(String hosname) {
+        return hospitalRepository.findHospitalByHosnameLike(hosname);
+    }
+
+    @Override
+    public Map<String, Object> item(String hoscode) {
+        HashMap<String, Object> result = new HashMap<>();
+        Hospital hospital = setHospitalHosType(this.getByHoscode(hoscode));
+        result.put("hospital",hospital);
+        result.put("bookingRule",hospital.getBookingRule());
         hospital.setBookingRule(null);
         return result;
     }
