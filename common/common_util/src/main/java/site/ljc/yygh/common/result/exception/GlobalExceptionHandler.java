@@ -3,7 +3,7 @@ package site.ljc.yygh.common.result.exception;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import site.ljc.yygh.common.result.Result;
+import site.ljc.yygh.common.result.result.Result;
 
 /**
  * @Author Hamster

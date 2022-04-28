@@ -1,4 +1,4 @@
-package site.ljc.yygh.common.result;
+package site.ljc.yygh.common.result.result;
 
 import lombok.Getter;
 

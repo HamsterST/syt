@@ -6,10 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import site.ljc.yygh.cmn.service.DictService;
-import site.ljc.yygh.common.result.Result;
+import site.ljc.yygh.common.result.result.Result;
 import site.ljc.yygh.model.cmn.Dict;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 

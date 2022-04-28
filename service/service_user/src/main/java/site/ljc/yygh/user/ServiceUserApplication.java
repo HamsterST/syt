@@ -1,25 +1,22 @@
-package site.ljc.yygh.hosp;
+package site.ljc.yygh.user;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @Author Hamster
- * @Date 2022/4/18 19:02
+ * @Date 2022/4/28 17:49
  * @Version 1.0
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"site.ljc"})
+@ComponentScan("site.ljc")
 @EnableDiscoveryClient
-//使用注解@EnableFeignClients启动feign客户端
-@EnableFeignClients(basePackages = {"site.ljc"})
-public class ServiceHospApplication {
+@EnableFeignClients("site.ljc")
+public class ServiceUserApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ServiceHospApplication.class,args);
+        SpringApplication.run(ServiceUserApplication.class,args);
     }
 }

@@ -38,6 +38,7 @@
         <oss.version>3.10.2</oss.version>
         <jodatime.version>2.10.1</jodatime.version>
         <druid.version>1.0.28</druid.version>
+        <tencent.verison>4.0.11</tencent.verison>
     </properties>
 
     <!--配置dependencyManagement锁定依赖的版本-->
@@ -133,7 +134,11 @@
                 <version>${druid.version}</version>
             </dependency>
 
-
+            <dependency>
+                <groupId>com.tencentcloudapi</groupId>
+                <artifactId>tencentcloud-sdk-java</artifactId>
+                <version>${tencent.verison}</version><!-- 注：这里只是示例版本号（可直接使用），可获取并替换为 最新的版本号，注意不要使用4.0.x版本（非最新版本） -->
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

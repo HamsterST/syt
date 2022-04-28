@@ -5,13 +5,12 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.redis.connection.RedisServer;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import site.ljc.yygh.common.helper.HttpRequestHelper;
-import site.ljc.yygh.common.result.Result;
+import site.ljc.yygh.common.result.result.Result;
 import site.ljc.yygh.common.utils.MD5;
 import site.ljc.yygh.common.utils.ResultCodeEnum;
 import site.ljc.yygh.common.utils.YyghException;
@@ -27,7 +26,6 @@ import site.ljc.yygh.vo.hosp.DepartmentQueryVo;
 import site.ljc.yygh.vo.hosp.ScheduleQueryVo;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**

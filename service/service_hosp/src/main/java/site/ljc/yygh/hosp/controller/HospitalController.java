@@ -3,11 +3,9 @@ package site.ljc.yygh.hosp.controller;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import site.ljc.yygh.common.result.Result;
+import site.ljc.yygh.common.result.result.Result;
 import site.ljc.yygh.hosp.service.HospitalService;
-import site.ljc.yygh.model.hosp.Hospital;
 import site.ljc.yygh.vo.hosp.HospitalQueryVo;
 
 import java.util.Map;

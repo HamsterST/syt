@@ -1,4 +1,4 @@
-package site.ljc.yygh.common.result;
+package site.ljc.yygh.common.result.result;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

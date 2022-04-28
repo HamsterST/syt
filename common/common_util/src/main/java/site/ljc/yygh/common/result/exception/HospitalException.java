@@ -2,7 +2,7 @@ package site.ljc.yygh.common.result.exception;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import site.ljc.yygh.common.result.ResultCodeEnum;
+import site.ljc.yygh.common.result.result.ResultCodeEnum;
 import lombok.Data;
 
 /**

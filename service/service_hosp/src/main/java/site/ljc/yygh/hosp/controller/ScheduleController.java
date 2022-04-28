@@ -3,7 +3,7 @@ package site.ljc.yygh.hosp.controller;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import site.ljc.yygh.common.result.Result;
+import site.ljc.yygh.common.result.result.Result;
 import site.ljc.yygh.hosp.service.ScheduleService;
 import site.ljc.yygh.model.hosp.Schedule;
 

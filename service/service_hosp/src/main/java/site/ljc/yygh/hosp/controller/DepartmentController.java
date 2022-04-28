@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import site.ljc.yygh.common.result.Result;
+import site.ljc.yygh.common.result.result.Result;
 import site.ljc.yygh.hosp.service.DepartmentService;
-import site.ljc.yygh.model.hosp.Department;
 import site.ljc.yygh.vo.hosp.DepartmentVo;
 
 import java.util.List;
