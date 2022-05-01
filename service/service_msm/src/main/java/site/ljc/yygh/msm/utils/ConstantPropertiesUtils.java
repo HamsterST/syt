@@ -14,10 +14,11 @@ import javax.validation.OverridesAttribute;
  */
 @Component
 public class ConstantPropertiesUtils implements InitializingBean {
-    @Value("${tencent.sms.SmsSdkAppId.}")
+    @Value("${tencent.sms.SmsSdkAppId}")
     private String sdkAppId;
     @Value("${tencent.sms.TemplateId}")
     private String templateId;
+
     public static String SDKAPPID;
     public static String TEMPLATEID;
     @Override

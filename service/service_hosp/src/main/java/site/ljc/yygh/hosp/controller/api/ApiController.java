@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import site.ljc.yygh.common.helper.HttpRequestHelper;
-import site.ljc.yygh.common.result.result.Result;
+import site.ljc.yygh.common.result.Result;
 import site.ljc.yygh.common.utils.MD5;
 import site.ljc.yygh.common.utils.ResultCodeEnum;
 import site.ljc.yygh.common.utils.YyghException;

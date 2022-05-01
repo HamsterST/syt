@@ -1,4 +1,4 @@
-package site.ljc.yygh.common.result.helper;
+package site.ljc.yygh.common.helper;
 
 import io.jsonwebtoken.*;
 import org.springframework.util.StringUtils;

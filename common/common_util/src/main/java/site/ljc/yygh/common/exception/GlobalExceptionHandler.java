@@ -1,9 +1,9 @@
-package site.ljc.yygh.common.result.exception;
+package site.ljc.yygh.common.exception;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import site.ljc.yygh.common.result.result.Result;
+import site.ljc.yygh.common.result.Result;
 
 /**
  * @Author Hamster

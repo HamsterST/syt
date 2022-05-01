@@ -1,8 +1,8 @@
-package site.ljc.yygh.common.result.exception;
+package site.ljc.yygh.common.exception;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import site.ljc.yygh.common.result.result.ResultCodeEnum;
+import site.ljc.yygh.common.result.ResultCodeEnum;
 import lombok.Data;
 
 /**

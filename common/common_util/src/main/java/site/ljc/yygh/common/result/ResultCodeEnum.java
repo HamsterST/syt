@@ -1,4 +1,4 @@
-package site.ljc.yygh.common.result.result;
+package site.ljc.yygh.common.result;
 
 import lombok.Getter;
 
@@ -19,7 +19,7 @@ public enum ResultCodeEnum {
     PERMISSION(209, "没有权限"),
 
     CODE_ERROR(210, "验证码错误"),
-//    LOGIN_MOBLE_ERROR(211, "账号不正确"),
+    //    LOGIN_MOBLE_ERROR(211, "账号不正确"),
     LOGIN_DISABLED_ERROR(212, "改用户已被禁用"),
     REGISTER_MOBLE_ERROR(213, "手机号已被使用"),
     LOGIN_AURH(214, "需要登录"),

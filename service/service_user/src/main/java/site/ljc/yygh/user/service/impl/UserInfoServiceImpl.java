@@ -2,15 +2,20 @@ package site.ljc.yygh.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import site.ljc.yygh.common.result.helper.JwtHelper;
+import site.ljc.yygh.common.helper.JwtHelper;
 import site.ljc.yygh.common.utils.ResultCodeEnum;
 import site.ljc.yygh.common.utils.YyghException;
+import site.ljc.yygh.enums.AuthStatusEnum;
 import site.ljc.yygh.model.user.UserInfo;
 import site.ljc.yygh.user.mapper.UserInfoMapper;
 import site.ljc.yygh.user.service.UserInfoService;
 import site.ljc.yygh.vo.user.LoginVo;
+import site.ljc.yygh.vo.user.UserAuthVo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +26,9 @@ import java.util.Map;
  * @Version 1.0
  */
 @Service
-public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> implements UserInfoService {
+public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper,UserInfo> implements UserInfoService {
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
     //用户手机号登录接口
     @Override
     public Map<String, Object> loginUser(LoginVo loginVo) {
@@ -33,7 +40,11 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         if(StringUtils.isBlank(phone)||StringUtils.isBlank(code)){
             throw  new YyghException(ResultCodeEnum.DATA_ERROR);
         }
-        //TODO 判断手机验证码和输入的验证码是否一致
+        // 判断手机验证码和输入的验证码是否一致
+        String redisCode = redisTemplate.opsForValue().get(phone);
+        if(!code.equals(redisCode)){
+            throw new YyghException(ResultCodeEnum.FAIL);
+        }
         //判断是否第一次登录：根据手机查询数据库，如果不存在相同手机号就是第一次登录
         QueryWrapper<UserInfo> wrapper = new QueryWrapper<>();
         wrapper.eq("phone",phone);
@@ -65,5 +76,29 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
             map.put("token",token);
         }
         return map;
+    }
+
+    @Override
+    public UserInfo selectWxInfoOpenId(String openid) {
+        QueryWrapper<UserInfo> userInfoQueryWrapper = new QueryWrapper<>();
+        userInfoQueryWrapper.eq("openid",openid);
+        UserInfo userInfo = baseMapper.selectOne(userInfoQueryWrapper);
+        return userInfo;
+    }
+
+    @Override
+    public void userAuth(Long userId, UserAuthVo userAuthVo) {
+        //根据用户id查询用户信息
+        UserInfo userInfo = baseMapper.selectById(userId);
+        //设置认证信息
+        //认证人姓名
+        userInfo.setName(userAuthVo.getName());
+        userInfo.setCertificatesType(userAuthVo.getCertificatesType());
+        userInfo.setCertificatesNo(userAuthVo.getCertificatesNo());
+        userInfo.setCertificatesUrl(userAuthVo.getCertificatesUrl());
+        userInfo.setAuthStatus(AuthStatusEnum.AUTH_RUN.getStatus());
+        //进行信息更新
+        baseMapper.updateById(userInfo);
+
     }
 }
