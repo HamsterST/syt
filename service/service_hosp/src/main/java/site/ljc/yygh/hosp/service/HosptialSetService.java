@@ -2,6 +2,7 @@ package site.ljc.yygh.hosp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import site.ljc.yygh.model.hosp.HospitalSet;
+import site.ljc.yygh.vo.order.SignInfoVo;
 
 /**
  * @Author Hamster
@@ -10,4 +11,6 @@ import site.ljc.yygh.model.hosp.HospitalSet;
  */
 public interface HosptialSetService extends IService<HospitalSet> {
     String getSignKey(String hoscode);
+
+    SignInfoVo getSignInfoVo(String hoscode);
 }

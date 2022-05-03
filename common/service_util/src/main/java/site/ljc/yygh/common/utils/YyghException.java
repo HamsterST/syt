@@ -3,6 +3,7 @@ package site.ljc.yygh.common.utils;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import site.ljc.yygh.common.result.ResultCodeEnum;
 
 /**
  * 自定义全局异常类
@@ -30,6 +31,8 @@ public class YyghException extends RuntimeException {
         super(resultCodeEnum.getMessage());
         this.code = resultCodeEnum.getCode();
     }
+
+
 
     @Override
     public String toString() {

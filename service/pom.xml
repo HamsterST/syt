@@ -17,6 +17,7 @@
         <module>service_cmn</module>
         <module>service_msm</module>
         <module>service_cos</module>
+        <module>service_order</module>
     </modules>
     <dependencies>
         <dependency>
@@ -38,6 +39,10 @@
             <groupId>site.ljc</groupId>
             <artifactId>service_cmn_client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
         </dependency>
         <!--web-->
         <dependency>

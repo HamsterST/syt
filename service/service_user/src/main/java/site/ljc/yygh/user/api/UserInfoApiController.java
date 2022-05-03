@@ -1,4 +1,4 @@
-package site.ljc.yygh.user.controller;
+package site.ljc.yygh.user.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
