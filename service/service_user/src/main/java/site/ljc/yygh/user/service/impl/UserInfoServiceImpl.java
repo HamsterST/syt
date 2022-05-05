@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import site.ljc.yygh.common.helper.JwtHelper;
+import site.ljc.yygh.common.result.ResultCodeEnum;
 import site.ljc.yygh.common.utils.YyghException;
 import site.ljc.yygh.enums.AuthStatusEnum;
 import site.ljc.yygh.model.user.Patient;

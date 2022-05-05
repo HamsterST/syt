@@ -15,7 +15,7 @@ import java.util.Map;
  * @Date 2022/4/22 10:20
  * @Version 1.0
  */
-public interface ScheduleService extends IService<Schedule> {
+public interface ScheduleService {
     void save(Map<String, Object> paramMap);
 
     Page<Schedule> findPageSchedule(int page, int limit, ScheduleQueryVo scheduleQueryVo);
@@ -31,4 +31,6 @@ public interface ScheduleService extends IService<Schedule> {
     Schedule getScheduleId(String scheduleId);
 
     ScheduleOrderVo getScheduleOrderVo(String scheduleId);
+    //跟新排班数据
+    void update(Schedule schedule);
 }

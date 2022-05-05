@@ -3,6 +3,23 @@
 
 
 <mapper namespace="site.ljc.yygh.order.mapper.OrderMapper">
-
+<!--    List<OrderCountVo> selectOrderCount(OrderCountQueryVo orderCountQueryVo)-->
+<select id="selectOrderCount" resultType="site.ljc.yygh.vo.order.OrderQueryVo">
+        SELECT COUNT(*) AS count ,reserve_date AS reserveDate FROM order_info
+        <where>
+            <if test="vo.hosname!=null and vo.hosname!=''">
+                and hosname like CONCAT('%',#{vo.hosname},'%')
+            </if>
+            <if test="vo.reserveDateBegin != null and vo.reserveDateBegin != ''">
+                and reserve_date >= #{vo.reserveDateBegin}
+            </if>
+            <if test="vo.reserveDateEnd != null and vo.reserveDateEnd != ''">
+                and reserve_date &lt;= #{vo.reserveDateEnd}
+            </if>
+            and is_deleted = 0
+        </where>
+        GROUP BY reserve_date
+        ORDER BY reserve_date
+</select>
 
 </mapper>

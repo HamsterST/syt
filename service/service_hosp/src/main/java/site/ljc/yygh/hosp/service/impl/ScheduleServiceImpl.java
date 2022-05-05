@@ -306,6 +306,12 @@ public class ScheduleServiceImpl extends ServiceImpl<ScheduleMapper,Schedule>imp
         return scheduleOrderVo;
     }
 
+    @Override
+    public void update(Schedule schedule) {
+        schedule.setUpdateTime(new Date());
+        scheduleRepository.save(schedule);
+    }
+
     private IPage getListDate(Integer page, Integer limit, BookingRule bookingRule) {
         //获取当太放号时间
         DateTime releaseTime = getDateTime(new Date(), bookingRule.getReleaseTime());

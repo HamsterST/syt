@@ -12,6 +12,7 @@
     <modules>
         <module>service_util</module>
         <module>common_util</module>
+        <module>rabbit_util</module>
     </modules>
     <artifactId>common</artifactId>
     <dependencies>
