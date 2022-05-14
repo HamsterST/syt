@@ -19,8 +19,6 @@
         <module>service_gateway</module>
         <module>hospital-manage</module>
         <module>service_client</module>
-        <module>Service_gateway</module>
-
     </modules>
 
     <properties>
